@@ -190,7 +190,8 @@ impl Enigma {
         let rotors = self.wheels.rotors.clone();
         let etw = abc!();
 
-        let ciphertext = plaintext.chars().map(|mut ch| {
+        let binding = plaintext.to_uppercase();
+        let ciphertext = binding.chars().map(|mut ch| {
             // elimate unwanted chars
             if ch.is_whitespace() {
                 return ch;
@@ -303,5 +304,5 @@ pub fn create_enigma_w_config_w_m4m3combos() {
 
     let mut enigma = Enigma::from_config(&["i", "ii", "iii"], "ukwc", None, Some(&plugboard));
 
-    println!("{}", enigma.encode("WTPXFMWXLIW"))
+    println!("{}", enigma.encode("EPAUK PEDJERBYLE HIIXJ MQVLJDNCYF BYLUZ QMVGOVQXXC JFGOF CWJEEMPWUZ GFWLF ZMUBHZRWXQ GDAWH KCIAUIJSWO CGSRH NRFKQPDHLT QYLBE FRGMLQEJMB NOUYD JBYITCVNMM KGGIP VYMVGSCFHN"))
 }
