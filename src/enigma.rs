@@ -271,9 +271,10 @@ pub fn create_enigma_w_config() {
         wheels: Rotors {
             reflector: Reflector::UKWB,
             rotors: vec![
-                Wheel::Rotor(Rotor::I),
-                Wheel::Rotor(Rotor::II),
                 Wheel::Rotor(Rotor::III),
+                Wheel::Rotor(Rotor::II),
+                Wheel::Rotor(Rotor::I),
+                Wheel::Reflector(Reflector::UKWB)
             ],
         },
         circuit: Circuit {
@@ -284,7 +285,7 @@ pub fn create_enigma_w_config() {
             },
             step: false,
             len: 4,
-            turnovers: vec!["Q".to_string(), "E".to_string(), "V".to_string()],
+            turnovers: vec!["V".to_string(), "E".to_string(), "Q".to_string()],
         },
         plugboard,
     };
