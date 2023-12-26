@@ -54,11 +54,7 @@ impl Circuit {
         self.node = Index { front: 0, back };
     }
 
-    // code_indices
-    // two ways
-    // node-enigma --> split "12?01"
-    // enigma --> 2 & 1
-    // operations.h line 106 & 103
+
     pub fn signal(&self) -> Box<dyn Fn(u32, [usize; 3]) -> isize + '_> {
         let mut connections = vec!["2", "12", "01", "0"]; // maybe reimplement this
         let mut len = connections.len();

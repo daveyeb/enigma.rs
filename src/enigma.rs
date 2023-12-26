@@ -21,7 +21,6 @@ impl Enigma {
 
     pub fn from_wheels(rotors: &[&str], reflector: &str) -> Self {
         let mut _rotors = Rotors::default();
-        let plugboard: Stecker = zip(abc!(), abc!()).into_iter().clone().collect();
 
         if rotors.len() >= 5 || rotors.len() <= 2 {
             panic!("{:?} Too many rotors, should be max 4 or min 3", rotors);
@@ -300,7 +299,7 @@ pub fn create_enigma_w_config() {
 #[test]
 pub fn create_enigma_w_config_w_m4m3combos() {
     let plugboard = [('X', 'S'), ('F', 'V')];
-    let code = Some(['Q', 'E', 'V']);
+    // let code = Some(['Q', 'E', 'V']);
 
     let mut enigma = Enigma::from_config(&["i", "ii", "iii"], "ukwc", None, Some(&plugboard));
 
