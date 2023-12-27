@@ -17,8 +17,6 @@ pub struct Index {
     pub back: isize,
 }
 
-// validate
-
 impl Circuit {
     pub fn new(rotors: &Vec<Wheel>, code: [usize; 3]) -> Self {
         let turnovers = rotors
@@ -27,7 +25,8 @@ impl Circuit {
             .collect::<Vec<_>>();
 
         let len = rotors.len() + 1; // plus reflector
-                                    // stopover
+        
+        // stopover
         let back;
         match len > 4 {
             true => back = 8 / 2 - 1,
@@ -53,7 +52,6 @@ impl Circuit {
 
         self.node = Index { front: 0, back };
     }
-
 
     pub fn signal(&self) -> Box<dyn Fn(u32, [usize; 3]) -> isize + '_> {
         let mut connections = vec!["2", "12", "01", "0"]; // maybe reimplement this
@@ -82,7 +80,6 @@ impl Circuit {
         match connection.len() - 1 == 1 {
             true => {
                 if connection.contains(&"4") {
-
                     Box::new(move |a: u32, _b: [usize; 3]| {
                         let alpha = abc!()
                             .iter()
@@ -91,7 +88,6 @@ impl Circuit {
                         alpha as isize
                     })
                 } else {
-
                     Box::new(move |a: u32, b: [usize; 3]| {
                         let alpha = abc!()
                             .iter()
@@ -127,7 +123,6 @@ impl Circuit {
                             .iter()
                             .position(|c| *c == char::from_u32(a).unwrap_or('\0') as u32)
                             .unwrap();
-
 
                         let wheel = connections[self.node.front % len].parse::<usize>().unwrap();
                         let mut sig = alpha as isize - b[wheel] as isize;
