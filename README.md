@@ -42,4 +42,4 @@ If you encounter any issues or wish to contribute improvements, you're welcome t
 
 ## License 
 
-This project is licensed under the MIT - see the [LICENSE](/blob/main/LICENSE) file for details.
+This project is licensed under the MIT - see the [LICENSE](/LICENSE) file for details.
