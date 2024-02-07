@@ -25,7 +25,7 @@ $ cargo build
 ## Usage
 
 ```rust 
-use my_project::MyStruct;
+use crate::enigma::Enigma;
 
 fn main() {
     let plugboard = [('X', 'S'), ('F', 'V')];
