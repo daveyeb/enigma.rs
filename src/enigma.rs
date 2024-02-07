@@ -88,6 +88,7 @@ impl Enigma {
         Enigma::from(&mut _rotors, None, None)
     }
 
+
     pub fn from_config(
         rotors: &[&str],
         reflector: &str,
@@ -185,6 +186,7 @@ impl Enigma {
         }
     }
 
+
     pub fn encode(&mut self, plaintext: &str) -> String {
         let rotors = self.wheels.rotors.clone();
         let etw = abc!();
@@ -217,6 +219,7 @@ impl Enigma {
 
         ciphertext.into_iter().collect()
     }
+
 
     pub fn decode(&mut self, ciphertext: &str) -> String {
         self.encode(ciphertext)
