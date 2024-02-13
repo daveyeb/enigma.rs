@@ -1,6 +1,6 @@
 # enigma.rs
 
-A terminal based program that mimicks the operations of an Enigma M3/M4 cipher machine developed by Germans during WWII. This is a rewrite of daveyeb/node-enigma, a more readable version (:
+A terminal based program that mimicks the operations of an Enigma M3/M4 cipher machine developed by Germans during WWII.
 
 ## Table of Contents
 
